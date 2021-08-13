@@ -13,7 +13,6 @@ function synonyms(query) {
     const $ = cheerio.load(req.getBody(), { ignoreWhitespace: true });
 
     let synonyms = $('#meanings').find('ul li a');
-    // fs.writeFileSync('test.html', $('#meanings').html())
     synonyms = synonyms.map(function() {
         return $(this).text().trim();
     }).get();
